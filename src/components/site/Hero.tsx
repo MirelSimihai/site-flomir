@@ -46,7 +46,7 @@ export function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-60" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-gold" />
             </span>
-            Servicii premium pentru evenimente
+            Din 2018 • Peste 700 de evenimente realizate
           </motion.div>
 
           <motion.h1
@@ -55,23 +55,46 @@ export function Hero() {
             transition={{ duration: 0.9, delay: 0.05, ease }}
             className="mt-10 font-display text-[2.75rem] font-light leading-[1.02] tracking-[-0.03em] sm:text-6xl md:text-7xl lg:text-[5.5rem]"
           >
-            Fiecare moment merită <br className="hidden sm:block" />
-            să fie{" "}
-            <span className="italic">
-              <span className="text-gold-gradient">trăit din nou</span>
-            </span>
-            .
+            Tot ce ai nevoie pentru <br className="hidden sm:block" />
+<span className="text-gold-gradient">
+  un eveniment memorabil
+</span>
+<br className="hidden sm:block" />
+într-o singură echipă.
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease }}
-            className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg lg:text-xl"
-          >
-            De la primul cadru până la ultima notă a serii — Flomir Events reunește
-            într-un singur loc tot ce face un eveniment cu adevărat memorabil.
-          </motion.p>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.2, ease }}
+  className="mx-auto mt-8 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg lg:text-xl"
+>
+  Foto & Video, Cabină Foto, Platformă 360, Oglindă Foto, Bar Mobil,
+  Fum Greu, Dronă și multe alte servicii premium pentru nunți și
+  botezuri în Iași și în întreaga regiune a Moldovei.
+</motion.p>
+
+<motion.div
+  initial={{ opacity: 0, y: 12 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.28, ease }}
+  className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground"
+>
+  <div className="flex items-center gap-2">
+    <span className="text-gold">✓</span>
+    <span>Peste 700 de evenimente</span>
+  </div>
+
+  <div className="flex items-center gap-2">
+    <span className="text-gold">✓</span>
+    <span>Din 2018</span>
+  </div>
+
+  <div className="flex items-center gap-2">
+    <span className="text-gold">✓</span>
+    <span>Peste 10 servicii într-o singură echipă</span>
+  </div>
+</motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -129,18 +152,20 @@ export function Hero() {
               }}
             />
             <div className="noise-overlay" />
-            <div className="relative flex h-full w-full flex-col items-center justify-center">
-              <button
-                aria-label="Redă videoclipul de prezentare"
-                className="group relative flex h-24 w-24 items-center justify-center rounded-full bg-gold-gradient text-background transition-transform duration-500 hover:scale-110"
-              >
-                <span className="absolute inset-0 rounded-full bg-gold opacity-40 blur-xl transition-opacity group-hover:opacity-70" />
-                <Play className="relative h-8 w-8 translate-x-0.5 fill-current" />
-              </button>
-              <p className="mt-8 text-[11px] uppercase tracking-[0.4em] text-muted-foreground">
-                Showreel · Flomir Events
-              </p>
-            </div>
+            <div className="relative flex h-full w-full items-center justify-center">
+
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="metadata"
+    className="h-full max-h-[850px] rounded-[2rem] object-cover shadow-2xl"
+  >
+    <source src="/videos/hero.mp4" type="video/mp4" />
+  </video>
+
+</div>
 
             {/* Top frame overlay */}
             <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-background/50 to-transparent" />
@@ -150,11 +175,11 @@ export function Hero() {
           {/* Stats */}
           <div className="mt-16 grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4 sm:gap-x-12">
             {[
-              { k: "10+", v: "Servicii sub un singur brand" },
-              { k: "★★★★★", v: "Experiențe premium" },
-              { k: "100%", v: "Dedicare pentru fiecare client" },
-              { k: "24/7", v: "Suport pe WhatsApp" },
-            ].map((s, i) => (
+  { k: "700+", v: "Evenimente realizate" },
+  { k: "2018", v: "Din 2018 alături de clienți" },
+  { k: "4.9★", v: "Rating Google" },
+  { k: "10+", v: "Servicii premium" },
+].map((s, i) => (
               <motion.div
                 key={s.v}
                 initial={{ opacity: 0, y: 16 }}
