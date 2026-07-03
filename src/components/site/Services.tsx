@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 import {
   Camera,
   Sparkles,
@@ -40,8 +41,26 @@ const services: Service[] = [
 ];
 
 const ease = [0.22, 1, 0.36, 1] as const;
+const fotoVideoImages = [
+  "/images/services/foto-video/1.webp",
+  "/images/services/foto-video/2.webp",
+  "/images/services/foto-video/3.webp",
+  "/images/services/foto-video/4.webp",
+  "/images/services/foto-video/5.webp",
+];
 
 export function Services() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+useEffect(() => {
+  const timer = setInterval(() => {
+    setCurrentImage((prev) =>
+      prev === fotoVideoImages.length - 1 ? 0 : prev + 1
+    );
+  }, 4000);
+
+  return () => clearInterval(timer);
+}, []);
   return (
     <section id="servicii" className="relative py-28 lg:py-40">
       {/* subtle gold backlight */}
@@ -112,21 +131,28 @@ export function Services() {
                 />
 
                 {s.featured && (
-                  <>
-                    <div
-                      aria-hidden
-                      className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full opacity-50"
-                      style={{
-                        background:
-                          "radial-gradient(circle, rgba(212,175,55,0.25), transparent 70%)",
-                      }}
-                    />
-                    <div className="absolute right-7 top-7 inline-flex items-center gap-1.5 rounded-full border border-gold/30 bg-background/40 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-gold backdrop-blur">
-                      <span className="h-1 w-1 rounded-full bg-gold" />
-                      Serviciu principal
-                    </div>
-                  </>
-                )}
+  <>
+    <AnimatePresence mode="wait">
+      <motion.img
+        key={currentImage}
+        src={fotoVideoImages[currentImage]}
+        alt="Foto video nunta Flomir Events"
+        initial={{ opacity: 0, scale: 1.08 }}
+        animate={{ opacity: 0.95, scale: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1.2 }}
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+    </AnimatePresence>
+
+    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+
+    <div className="absolute right-7 top-7 inline-flex items-center gap-1.5 rounded-full border border-gold/30 bg-black/40 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-gold backdrop-blur">
+      <span className="h-1 w-1 rounded-full bg-gold" />
+      Cel mai ales
+    </div>
+  </>
+)}
 
                 <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl border border-border bg-surface text-gold transition-all duration-500 group-hover:border-gold/40 group-hover:text-gold-light">
                   <Icon className="h-5 w-5" strokeWidth={1.5} />
@@ -140,16 +166,18 @@ export function Services() {
                   {s.title}
                 </h3>
                 <p
-                  className={`relative mt-4 text-sm leading-relaxed text-muted-foreground ${
-                    s.featured ? "max-w-lg sm:text-base" : ""
-                  }`}
-                >
-                  {s.desc}
-                </p>
+  className={`relative mt-4 text-sm leading-relaxed ${
+    s.featured
+      ? "max-w-lg sm:text-base text-white/80"
+      : "text-muted-foreground"
+  }`}
+>
+  {s.desc}
+</p>
 
                 <div className="relative mt-auto flex items-center gap-1.5 pt-8 text-[10px] font-medium uppercase tracking-[0.3em] text-gold">
                   <span className="opacity-60 transition-opacity duration-300 group-hover:opacity-100">
-                    Detalii în curând
+                    DESCOPERĂ SERVICIUL
                   </span>
                   <ArrowUpRight className="h-3 w-3 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
                 </div>
