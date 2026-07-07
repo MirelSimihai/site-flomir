@@ -1,267 +1,469 @@
-@import "tailwindcss" source(none);
-@source "../src";
+@import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
 
-@theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
+@theme {
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-surface: var(--surface);
-  --color-surface-2: var(--surface-2);
+
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
   --color-gold: var(--gold);
   --color-gold-light: var(--gold-light);
   --color-gold-deep: var(--gold-deep);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
+
   --color-border: var(--border);
-  --color-border-strong: var(--border-strong);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
 
-  --font-display: "Fraunces", "Cormorant Garamond", ui-serif, Georgia, serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display:
+    "Fraunces",
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
-  --shadow-soft: 0 1px 2px rgb(0 0 0 / 0.18), 0 8px 24px -12px rgb(0 0 0 / 0.35);
-  --shadow-elegant: 0 1px 0 rgb(255 255 255 / 0.04) inset, 0 30px 80px -40px rgb(0 0 0 / 0.7);
-  --shadow-gold: 0 0 0 1px color-mix(in oklab, var(--gold) 28%, transparent) inset,
-                 0 20px 60px -20px color-mix(in oklab, var(--gold) 35%, transparent);
-  --shadow-glass: 0 1px 0 rgb(255 255 255 / 0.06) inset,
-                  0 30px 60px -30px rgb(0 0 0 / 0.6);
+  --font-sans:
+    "Inter",
+    system-ui,
+    sans-serif;
+
+
+  --shadow-elegant:
+    0 25px 80px rgba(24,21,18,.15);
+
+  --shadow-gold:
+    0 20px 60px rgba(198,164,93,.35);
+
 }
+
+
+
+
+/* =========================
+   FLOMIR LUXURY COLORS
+========================= */
+
 
 :root {
+
   --radius: 1.25rem;
 
-  /* Flomir Events palette — refined */
-  --background: oklch(0.135 0.003 60);         /* near-black, warm */
-  --surface: oklch(0.175 0.003 60);            /* #131313 warm */
-  --surface-2: oklch(0.205 0.004 60);          /* #1A1A1A */
-  --card: oklch(0.21 0.004 60);                /* slightly lifted */
-  --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.19 0.003 60);
-  --popover-foreground: oklch(1 0 0);
-  --foreground: oklch(0.985 0 0);
-  --muted: oklch(0.22 0.003 60);
-  --muted-foreground: oklch(0.74 0.005 60);    /* softer secondary text */
 
-  --gold-deep: oklch(0.66 0.13 78);            /* #B4892E */
-  --gold: oklch(0.78 0.12 84);                 /* #D4AF37 */
-  --gold-light: oklch(0.92 0.09 92);           /* #F5E1A0 */
+  /* Ivory */
+  --background:#F8F4EC;
 
-  --primary: oklch(0.78 0.12 84);
-  --primary-foreground: oklch(0.13 0 0);
-  --secondary: oklch(0.22 0.003 60);
-  --secondary-foreground: oklch(0.98 0 0);
-  --accent: oklch(0.78 0.12 84);
-  --accent-foreground: oklch(0.13 0 0);
-  --destructive: oklch(0.6 0.22 27);
-  --destructive-foreground: oklch(1 0 0);
 
-  --border: oklch(1 0 0 / 6%);
-  --border-strong: oklch(1 0 0 / 12%);
-  --input: oklch(1 0 0 / 8%);
-  --ring: oklch(0.78 0.12 84 / 50%);
+  /* Soft black */
+  --foreground:#181512;
 
-  --sidebar: var(--surface);
-  --sidebar-foreground: var(--foreground);
-  --sidebar-primary: var(--gold);
-  --sidebar-primary-foreground: var(--background);
-  --sidebar-accent: var(--card);
-  --sidebar-accent-foreground: var(--foreground);
-  --sidebar-border: var(--border);
-  --sidebar-ring: var(--ring);
+
+  /* Champagne cards */
+  --card:#EFE4D2;
+
+  --card-foreground:#181512;
+
+
+  /* Text */
+  --muted:#EFE4D2;
+
+  --muted-foreground:#7C6F61;
+
+
+  /* Gold */
+
+  --gold:#C6A45D;
+
+  --gold-light:#EAD8A8;
+
+  --gold-deep:#9A7832;
+
+
+  /* Borders */
+
+  --border:rgba(24,21,18,.15);
+
 }
 
-@theme inline {
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-}
+
+
+
+/* =========================
+   BASE
+========================= */
+
 
 @layer base {
-  * { border-color: var(--color-border); }
+
+
+  * {
+
+    border-color:var(--border);
+
+  }
+
 
   html {
-    scroll-behavior: smooth;
-    -webkit-tap-highlight-color: transparent;
+
+    scroll-behavior:smooth;
+
   }
+
 
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-    font-family: var(--font-sans);
-    font-feature-settings: "ss01", "cv11";
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+
+    background:var(--background);
+
+    color:var(--foreground);
+
+    font-family:var(--font-sans);
+
+    -webkit-font-smoothing:antialiased;
+
   }
 
-  h1, h2, h3, h4, h5 {
-    font-family: var(--font-display);
-    font-feature-settings: "ss01";
-    letter-spacing: -0.025em;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+
+    font-family:var(--font-display);
+
+    letter-spacing:-.025em;
+
+    color:#181512;
+
   }
+
 
   ::selection {
-    background: color-mix(in oklab, var(--gold) 80%, transparent);
-    color: var(--background);
+
+    background:#C6A45D;
+
+    color:#181512;
+
   }
 
-  /* Premium focus ring */
-  :focus-visible {
-    outline: 2px solid color-mix(in oklab, var(--gold) 70%, transparent);
-    outline-offset: 3px;
-    border-radius: 4px;
-  }
+
 }
 
-/* ── Premium utilities ────────────────────────────────────────────── */
+/* =========================
+   GOLD EFFECTS
+========================= */
 
-@utility text-gold-gradient {
-  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 55%, var(--gold-deep) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
 
-@utility bg-gold-gradient {
+.text-gold-gradient {
+
   background:
-    linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 55%, var(--gold-deep) 100%);
+    linear-gradient(
+      135deg,
+      var(--gold-light),
+      var(--gold),
+      var(--gold-deep)
+    );
+
+
+  -webkit-background-clip:text;
+
+  background-clip:text;
+
+  color:transparent;
+
 }
 
-@utility bg-gold-subtle {
+
+
+
+.bg-gold-gradient {
+
+
   background:
-    linear-gradient(135deg,
-      color-mix(in oklab, var(--gold) 8%, transparent) 0%,
-      color-mix(in oklab, var(--gold) 0%, transparent) 60%);
+    linear-gradient(
+      135deg,
+      #EAD8A8,
+      #C6A45D,
+      #9A7832
+    );
+
+
 }
 
-@utility bg-radial-spotlight {
+
+
+
+/* =========================
+   BACKGROUND EFFECT
+========================= */
+
+
+.bg-radial-spotlight {
+
+
   background:
-    radial-gradient(ellipse 70% 45% at 50% -5%, color-mix(in oklab, var(--gold) 14%, transparent), transparent 65%),
-    radial-gradient(ellipse 50% 40% at 80% 110%, color-mix(in oklab, var(--gold) 6%, transparent), transparent 70%),
+
+    radial-gradient(
+      circle at 30% 20%,
+      rgba(198,164,93,.18),
+      transparent 40%
+    ),
+
+
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(216,191,174,.25),
+      transparent 45%
+    ),
+
+
     var(--background);
+
+
 }
 
-@utility glass {
-  background: color-mix(in oklab, var(--surface) 55%, transparent);
-  backdrop-filter: blur(18px) saturate(140%);
-  border: 1px solid color-mix(in oklab, white 8%, transparent);
-}
 
-@utility glass-strong {
-  background: color-mix(in oklab, var(--background) 72%, transparent);
-  backdrop-filter: blur(24px) saturate(160%);
-  border: 1px solid color-mix(in oklab, white 10%, transparent);
-}
 
-@utility gold-ring {
+
+
+
+/* =========================
+   GLASS PREMIUM
+========================= */
+
+
+.glass {
+
+
+  background:
+    rgba(248,244,236,.85);
+
+
+  border:
+    1px solid rgba(198,164,93,.25);
+
+
+  backdrop-filter:
+    blur(22px);
+
+
   box-shadow:
-    0 0 0 1px color-mix(in oklab, var(--gold) 32%, transparent),
-    0 0 40px -10px color-mix(in oklab, var(--gold) 40%, transparent);
+    0 25px 60px rgba(24,21,18,.12);
+
+
 }
 
-@utility noise {
-  position: relative;
-}
-@utility noise-overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.035;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+
+
+
+.glass-strong {
+
+
+  background:#181512;
+
+
+  color:#F8F4EC;
+
+
+  border:
+    1px solid rgba(198,164,93,.3);
+
+
+  box-shadow:
+    0 25px 70px rgba(24,21,18,.35);
+
+
 }
 
-@utility hairline-t {
-  border-top: 1px solid var(--border);
+
+
+
+
+
+/* =========================
+   BUTTON PREMIUM SHINE
+========================= */
+
+
+.btn-sheen {
+
+
+  position:relative;
+
+  overflow:hidden;
+
+  isolation:isolate;
+
+
 }
 
-/* Sheen sweep for premium buttons */
-@utility btn-sheen {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-}
+
+
 .btn-sheen::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    115deg,
-    transparent 30%,
-    color-mix(in oklab, white 35%, transparent) 50%,
-    transparent 70%
-  );
-  transform: translateX(-120%);
-  transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
-  pointer-events: none;
-  mix-blend-mode: overlay;
+
+
+  content:"";
+
+
+  position:absolute;
+
+
+  inset:0;
+
+
+  background:
+
+    linear-gradient(
+
+      110deg,
+
+      transparent,
+
+      rgba(255,255,255,.5),
+
+      transparent
+
+    );
+
+
+  transform:translateX(-120%);
+
+
+  transition:.8s;
+
+
 }
+
+
+
 .btn-sheen:hover::after {
-  transform: translateX(120%);
+
+
+  transform:translateX(120%);
+
+
 }
 
-/* Animated gradient orbs */
+
+
+
+
+
+
+/* =========================
+   GOLD ORBS
+========================= */
+
+
 @keyframes float-orb {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-  50%      { transform: translate3d(2%, -3%, 0) scale(1.05); }
-}
-@utility orb {
-  border-radius: 9999px;
-  filter: blur(80px);
-  will-change: transform;
-  animation: float-orb 14s ease-in-out infinite;
+
+
+  0%,100% {
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+
+  50% {
+
+    transform:
+      translateY(-20px)
+      scale(1.05);
+
+  }
+
+
 }
 
-/* Subtle reveal on text */
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-@utility text-shimmer {
-  background: linear-gradient(
-    90deg,
-    var(--gold-deep) 0%,
-    var(--gold-light) 50%,
-    var(--gold-deep) 100%
-  );
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: shimmer 6s linear infinite;
+
+
+.orb {
+
+
+  border-radius:9999px;
+
+
+  filter:blur(80px);
+
+
+  animation:
+    float-orb 14s ease-in-out infinite;
+
+
 }
 
-/* Marquee */
+
+
+
+
+
+
+/* =========================
+   NOISE TEXTURE
+========================= */
+
+
+.noise-overlay {
+
+
+  position:absolute;
+
+
+  inset:0;
+
+
+  pointer-events:none;
+
+
+  opacity:.025;
+
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   MARQUEE
+========================= */
+
+
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+
+
+  from {
+
+    transform:translateX(0);
+
+  }
+
+
+  to {
+
+    transform:translateX(-50%);
+
+  }
+
+
 }
-@utility marquee-track {
-  animation: marquee 40s linear infinite;
+
+
+
+
+.marquee-track {
+
+
+  animation:
+    marquee 40s linear infinite;
+
+
 }

@@ -9,10 +9,18 @@ export function About() {
       id="despre"
       className="relative overflow-hidden py-28 lg:py-40"
     >
-      {/* Gold glow */}
+
+      {/* Champagne glow */}
       <div
         aria-hidden
-        className="absolute left-1/2 top-0 -z-10 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-gold/10 blur-[140px]"
+        className="
+        absolute left-1/2 top-0 -z-10
+        h-[500px] w-[500px]
+        -translate-x-1/2
+        rounded-full
+        bg-gold/20
+        blur-[150px]
+        "
       />
 
 
@@ -21,23 +29,45 @@ export function About() {
         <div className="grid items-center gap-16 lg:grid-cols-2">
 
 
-          {/* LEFT TEXT */}
+          {/* LEFT */}
           <motion.div
+
             initial={{ opacity: 0, y: 30 }}
+
             whileInView={{ opacity: 1, y: 0 }}
+
             viewport={{ once: true }}
+
             transition={{
               duration: 0.8,
               ease,
             }}
+
           >
 
-            <div className="text-[11px] uppercase tracking-[0.4em] text-gold">
+
+            <div className="
+            text-[11px]
+            uppercase
+            tracking-[0.4em]
+            text-gold
+            ">
               Despre Flomir Events
             </div>
 
 
-            <h2 className="mt-5 font-display text-4xl font-light leading-tight tracking-[-0.03em] sm:text-5xl lg:text-6xl">
+
+            <h2 className="
+            mt-5
+            font-display
+            text-4xl
+            font-light
+            leading-tight
+            tracking-[-0.03em]
+            text-[#181512]
+            sm:text-5xl
+            lg:text-6xl
+            ">
 
               Nu oferim doar servicii.
               <br />
@@ -49,7 +79,14 @@ export function About() {
             </h2>
 
 
-            <p className="mt-8 text-base leading-relaxed text-muted-foreground lg:text-lg">
+
+            <p className="
+            mt-8
+            text-base
+            leading-relaxed
+            text-[#7C6F61]
+            lg:text-lg
+            ">
 
               Flomir Events s-a născut din dorința de a aduce toate
               serviciile importante ale unui eveniment într-o singură echipă:
@@ -59,7 +96,14 @@ export function About() {
             </p>
 
 
-            <p className="mt-5 text-base leading-relaxed text-muted-foreground lg:text-lg">
+
+            <p className="
+            mt-5
+            text-base
+            leading-relaxed
+            text-[#7C6F61]
+            lg:text-lg
+            ">
 
               Din 2018 am fost alături de sute de cupluri și familii,
               transformând nunți, botezuri și evenimente private în amintiri
@@ -69,7 +113,9 @@ export function About() {
 
 
 
+
             <div className="mt-10 space-y-4">
+
 
               {[
                 "O singură echipă pentru toate serviciile",
@@ -79,10 +125,18 @@ export function About() {
 
                 <div
                   key={item}
-                  className="flex items-center gap-3 text-sm text-foreground"
+                  className="
+                  flex
+                  items-center
+                  gap-3
+                  text-sm
+                  text-[#181512]
+                  "
                 >
 
-                  <CheckCircle2 className="h-5 w-5 text-gold" />
+                  <CheckCircle2
+                    className="h-5 w-5 text-gold"
+                  />
 
                   {item}
 
@@ -90,31 +144,59 @@ export function About() {
 
               ))}
 
+
             </div>
+
 
           </motion.div>
 
 
 
 
-          {/* RIGHT CARD */}
+
+
+          {/* RIGHT */}
           <motion.div
+
             initial={{ opacity: 0, y: 40 }}
+
             whileInView={{ opacity: 1, y: 0 }}
+
             viewport={{ once: true }}
+
             transition={{
               duration: 0.9,
               delay: 0.1,
               ease,
             }}
+
             className="relative"
+
           >
 
 
-            <div className="absolute inset-0 rounded-[2.5rem] bg-gold/20 blur-[80px]" />
+
+            <div className="
+            absolute inset-0
+            rounded-[2.5rem]
+            bg-gold/20
+            blur-[90px]
+            " />
 
 
-            <div className="relative overflow-hidden rounded-[2.5rem] border border-border bg-card/70 p-10 backdrop-blur-xl">
+
+            <div className="
+            relative
+            overflow-hidden
+            rounded-[2.5rem]
+            border
+            border-gold/25
+            bg-[#EFE4D2]/70
+            p-10
+            shadow-elegant
+            backdrop-blur-xl
+            ">
+
 
 
               <div className="grid gap-6">
@@ -125,13 +207,11 @@ export function About() {
                   text="anul în care a început povestea Flomir"
                 />
 
-
                 <InfoCard
                   icon={Users}
                   number="700+"
                   text="evenimente realizate alături de clienții noștri"
                 />
-
 
                 <InfoCard
                   icon={Sparkles}
@@ -142,18 +222,26 @@ export function About() {
 
               </div>
 
+
             </div>
+
 
 
           </motion.div>
 
+
         </div>
 
+
       </div>
+
 
     </section>
   );
 }
+
+
+
 
 
 
@@ -166,22 +254,67 @@ function InfoCard({
   number: string;
   text: string;
 }) {
+
+
   return (
 
-    <div className="rounded-3xl border border-border bg-black/30 p-6">
+    <div
+      className="
+      group
+      rounded-3xl
+      border
+      border-gold/25
+      bg-[#F8F4EC]/80
+      p-7
+      shadow-elegant
+      transition-all
+      duration-500
+      hover:-translate-y-2
+      hover:border-gold/50
+      "
+    >
+
 
       <Icon
-        className="mb-5 h-6 w-6 text-gold"
+        className="
+        mb-5
+        h-6
+        w-6
+        text-gold
+        "
         strokeWidth={1.5}
       />
 
-      <div className="font-display text-5xl font-light text-gold-gradient">
+
+
+      <div
+        className="
+        font-display
+        text-6xl
+        font-light
+        text-gold-gradient
+        "
+      >
+
         {number}
+
       </div>
 
-      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+
+
+      <p
+        className="
+        mt-3
+        text-sm
+        leading-relaxed
+        text-[#7C6F61]
+        "
+      >
+
         {text}
+
       </p>
+
 
     </div>
 
