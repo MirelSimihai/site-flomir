@@ -39,7 +39,7 @@ export function Hero() {
             className="glass mx-auto inline-flex items-center gap-2.5 rounded-full px-4 py-1.5 text-[11px] uppercase tracking-[0.28em] text-muted-foreground"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-            Din 2018 • Peste 700 de evenimente realizate
+            Din 2022 • Peste 300 de evenimente realizate
           </motion.div>
 
 
@@ -173,8 +173,8 @@ export function Hero() {
         <div className="mt-16 grid grid-cols-2 gap-10 sm:grid-cols-4">
 
           {[
-            ["700+", "Evenimente realizate"],
-            ["2018", "Din 2018"],
+            ["200+", "Evenimente realizate"],
+            ["2018", "Din 2022"],
             ["4.9★", "Rating Google"],
             ["10+", "Servicii premium"],
           ].map(([k,v]) => (

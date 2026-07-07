@@ -105,7 +105,7 @@ export function About() {
             lg:text-lg
             ">
 
-              Din 2018 am fost alături de sute de cupluri și familii,
+              Din 2022 am fost alături de zeci de cupluri și familii,
               transformând nunți, botezuri și evenimente private în amintiri
               care rămân.
 
@@ -203,13 +203,13 @@ export function About() {
 
                 <InfoCard
                   icon={Calendar}
-                  number="2018"
+                  number="2022"
                   text="anul în care a început povestea Flomir"
                 />
 
                 <InfoCard
                   icon={Users}
-                  number="700+"
+                  number="200+"
                   text="evenimente realizate alături de clienții noștri"
                 />
 

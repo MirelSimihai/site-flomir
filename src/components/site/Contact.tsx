@@ -10,6 +10,7 @@ import {
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
+
 const contacts = [
   {
     icon: Phone,
@@ -17,18 +18,21 @@ const contacts = [
     value: "0740 593 755",
     link: "tel:0740593755",
   },
+
   {
     icon: MessageCircle,
     title: "WhatsApp",
     value: "Trimite mesaj direct",
     link: "https://wa.me/40740593755",
   },
+
   {
     icon: Mail,
     title: "Email",
     value: "Contact Flomir Events",
     link: "#",
   },
+
   {
     icon: MapPin,
     title: "Locație",
@@ -37,12 +41,17 @@ const contacts = [
   },
 ];
 
+
+
 export function Contact() {
+
   return (
+
     <section
       id="contact"
       className="relative overflow-hidden py-28 lg:py-40"
     >
+
 
       {/* Luxury glow */}
       <div
@@ -69,16 +78,30 @@ export function Contact() {
 
         {/* HEADER */}
         <motion.div
+
           initial={{ opacity: 0, y: 25 }}
+
           whileInView={{ opacity: 1, y: 0 }}
+
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease }}
+
+          transition={{
+            duration: 0.8,
+            ease,
+          }}
+
           className="mx-auto max-w-3xl text-center"
+
         >
 
+
           <div className="text-[11px] uppercase tracking-[0.4em] text-gold">
+
             Contact
+
           </div>
+
+
 
 
           <h2
@@ -96,11 +119,17 @@ export function Contact() {
 
             Hai să construim{" "}
 
+
             <span className="italic text-gold-gradient">
+
               evenimentul tău.
+
             </span>
 
+
           </h2>
+
+
 
 
           <p
@@ -120,27 +149,36 @@ export function Contact() {
           </p>
 
 
+
         </motion.div>
 
 
 
 
 
+
+
         {/* CONTACT CARDS */}
+
         <div className="mt-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
 
           {contacts.map((item, i) => {
 
+
             const Icon = item.icon;
+
 
 
             return (
 
+
               <motion.a
+
                 key={item.title}
 
                 href={item.link}
+
 
                 target={
                   item.link.startsWith("http")
@@ -148,11 +186,15 @@ export function Contact() {
                     : undefined
                 }
 
+
                 initial={{ opacity: 0, y: 25 }}
+
 
                 whileInView={{ opacity: 1, y: 0 }}
 
+
                 viewport={{ once: true }}
+
 
                 transition={{
                   duration: 0.7,
@@ -160,13 +202,13 @@ export function Contact() {
                   ease,
                 }}
 
+
                 whileHover={{ y: -8 }}
+
 
                 className="
                 group
-
                 rounded-[2rem]
-
                 border
                 border-gold/20
 
@@ -184,13 +226,17 @@ export function Contact() {
                 duration-500
 
                 hover:border-gold/50
+
                 hover:shadow-[0_25px_70px_rgba(198,164,93,.25)]
                 "
+
               >
 
 
-                {/* ICON */}
+
+
                 <div
+
                   className="
                   mx-auto
 
@@ -219,14 +265,19 @@ export function Contact() {
                   group-hover:bg-gold
                   group-hover:text-[#181512]
                   "
+
                 >
+
 
                   <Icon
                     className="h-6 w-6"
                     strokeWidth={1.8}
                   />
 
+
                 </div>
+
+
 
 
 
@@ -246,6 +297,8 @@ export function Contact() {
 
 
 
+
+
                 <p
                   className="
                   mt-3
@@ -259,9 +312,12 @@ export function Contact() {
                 </p>
 
 
+
               </motion.a>
 
+
             );
+
 
           })}
 
@@ -272,13 +328,22 @@ export function Contact() {
 
 
 
+
+
+
         {/* SOCIAL */}
+
         <div className="mt-16 flex justify-center gap-5">
 
 
+          {/* INSTAGRAM */}
+
           <a
+
             href="https://www.instagram.com/flomir.events"
+
             target="_blank"
+
             rel="noreferrer"
 
             className="
@@ -306,17 +371,27 @@ export function Contact() {
             hover:text-[#181512]
             hover:scale-110
             "
+
           >
+
 
             <Instagram size={20} />
 
+
           </a>
 
 
 
+
+
+          {/* FACEBOOK */}
+
           <a
-            href="https://www.facebook.com/"
+
+            href="https://www.facebook.com/profile.php?id=61559012592458"
+
             target="_blank"
+
             rel="noreferrer"
 
             className="
@@ -344,18 +419,26 @@ export function Contact() {
             hover:text-[#181512]
             hover:scale-110
             "
+
           >
+
 
             <Facebook size={20} />
 
+
           </a>
+
 
 
         </div>
 
 
+
       </div>
 
+
     </section>
+
   );
+
 }
