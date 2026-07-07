@@ -39,7 +39,7 @@ export function Hero() {
             className="glass mx-auto inline-flex items-center gap-2.5 rounded-full px-4 py-1.5 text-[11px] uppercase tracking-[0.28em] text-muted-foreground"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-            Din 2022 • Peste 300 de evenimente realizate
+            Din 2022 • Peste 200 de evenimente realizate
           </motion.div>
 
 
