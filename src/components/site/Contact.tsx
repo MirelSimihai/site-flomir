@@ -44,14 +44,30 @@ export function Contact() {
       className="relative overflow-hidden py-28 lg:py-40"
     >
 
-      {/* background glow */}
-      <div className="absolute left-1/2 top-1/2 -z-10 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/10 blur-[150px]" />
+      {/* Luxury glow */}
+      <div
+        aria-hidden
+        className="
+        absolute
+        left-1/2
+        top-1/2
+        -z-10
+        h-[600px]
+        w-[600px]
+        -translate-x-1/2
+        -translate-y-1/2
+        rounded-full
+        bg-gold/20
+        blur-[150px]
+        "
+      />
+
 
 
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
 
 
-        {/* Header */}
+        {/* HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -65,10 +81,20 @@ export function Contact() {
           </div>
 
 
-          <h2 className="mt-5 font-display text-4xl font-light leading-tight tracking-[-0.03em] sm:text-5xl lg:text-6xl">
+          <h2
+            className="
+            mt-5
+            font-display
+            text-4xl
+            font-light
+            leading-tight
+            tracking-[-0.03em]
+            sm:text-5xl
+            lg:text-6xl
+            "
+          >
 
-            Hai să construim
-            {" "}
+            Hai să construim{" "}
 
             <span className="italic text-gold-gradient">
               evenimentul tău.
@@ -77,7 +103,16 @@ export function Contact() {
           </h2>
 
 
-          <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
+          <p
+            className="
+            mx-auto
+            mt-6
+            max-w-xl
+            text-base
+            leading-relaxed
+            text-muted-foreground
+            "
+          >
 
             Spune-ne data evenimentului și serviciile dorite.
             Revenim cu o ofertă personalizată pentru tine.
@@ -89,66 +124,155 @@ export function Contact() {
 
 
 
-        {/* Contact cards */}
+
+
+        {/* CONTACT CARDS */}
         <div className="mt-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
 
           {contacts.map((item, i) => {
+
             const Icon = item.icon;
+
 
             return (
 
               <motion.a
                 key={item.title}
+
                 href={item.link}
+
                 target={
                   item.link.startsWith("http")
                     ? "_blank"
                     : undefined
                 }
+
                 initial={{ opacity: 0, y: 25 }}
+
                 whileInView={{ opacity: 1, y: 0 }}
+
                 viewport={{ once: true }}
+
                 transition={{
                   duration: 0.7,
                   delay: i * 0.08,
                   ease,
                 }}
-                whileHover={{ y: -6 }}
-                className="group rounded-[2rem] border border-border bg-card/60 p-8 text-center transition-all duration-500 hover:border-gold/30"
+
+                whileHover={{ y: -8 }}
+
+                className="
+                group
+
+                rounded-[2rem]
+
+                border
+                border-gold/20
+
+                bg-[#EFE4D2]/70
+
+                p-8
+
+                text-center
+
+                shadow-[0_20px_50px_rgba(24,21,18,.08)]
+
+                backdrop-blur-xl
+
+                transition-all
+                duration-500
+
+                hover:border-gold/50
+                hover:shadow-[0_25px_70px_rgba(198,164,93,.25)]
+                "
               >
 
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-gold/25 bg-black/30 text-gold">
+
+                {/* ICON */}
+                <div
+                  className="
+                  mx-auto
+
+                  flex
+                  h-16
+                  w-16
+
+                  items-center
+                  justify-center
+
+                  rounded-full
+
+                  border
+                  border-gold/30
+
+                  bg-[#F8F4EC]
+
+                  text-[#9A7832]
+
+                  shadow-[0_15px_35px_rgba(198,164,93,.25)]
+
+                  transition-all
+                  duration-500
+
+                  group-hover:scale-110
+                  group-hover:bg-gold
+                  group-hover:text-[#181512]
+                  "
+                >
 
                   <Icon
                     className="h-6 w-6"
-                    strokeWidth={1.5}
+                    strokeWidth={1.8}
                   />
 
                 </div>
 
 
-                <h3 className="mt-6 font-display text-2xl font-light">
+
+                <h3
+                  className="
+                  mt-7
+                  font-display
+                  text-2xl
+                  font-light
+                  text-[#181512]
+                  "
+                >
+
                   {item.title}
+
                 </h3>
 
 
-                <p className="mt-3 text-sm text-muted-foreground">
+
+                <p
+                  className="
+                  mt-3
+                  text-sm
+                  text-[#7C6F61]
+                  "
+                >
+
                   {item.value}
+
                 </p>
 
 
               </motion.a>
 
             );
+
           })}
+
 
         </div>
 
 
 
 
-        {/* Social */}
+
+        {/* SOCIAL */}
         <div className="mt-16 flex justify-center gap-5">
 
 
@@ -156,7 +280,32 @@ export function Contact() {
             href="https://www.instagram.com/flomir.events"
             target="_blank"
             rel="noreferrer"
-            className="flex h-12 w-12 items-center justify-center rounded-full border border-gold/25 text-gold transition hover:bg-gold hover:text-black"
+
+            className="
+            flex
+            h-12
+            w-12
+
+            items-center
+            justify-center
+
+            rounded-full
+
+            border
+            border-gold/30
+
+            bg-[#F8F4EC]
+
+            text-[#9A7832]
+
+            shadow-[0_10px_25px_rgba(198,164,93,.2)]
+
+            transition-all
+
+            hover:bg-gold
+            hover:text-[#181512]
+            hover:scale-110
+            "
           >
 
             <Instagram size={20} />
@@ -164,11 +313,37 @@ export function Contact() {
           </a>
 
 
+
           <a
             href="https://www.facebook.com/"
             target="_blank"
             rel="noreferrer"
-            className="flex h-12 w-12 items-center justify-center rounded-full border border-gold/25 text-gold transition hover:bg-gold hover:text-black"
+
+            className="
+            flex
+            h-12
+            w-12
+
+            items-center
+            justify-center
+
+            rounded-full
+
+            border
+            border-gold/30
+
+            bg-[#F8F4EC]
+
+            text-[#9A7832]
+
+            shadow-[0_10px_25px_rgba(198,164,93,.2)]
+
+            transition-all
+
+            hover:bg-gold
+            hover:text-[#181512]
+            hover:scale-110
+            "
           >
 
             <Facebook size={20} />
