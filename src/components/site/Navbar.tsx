@@ -434,31 +434,13 @@ export function Navbar() {
 
 
                 <a
-
-                  href="#contact"
-
-                  className="
-                  mt-5
-
-                  rounded-full
-
-                  bg-gold-gradient
-
-                  px-5
-                  py-3
-
-                  text-center
-                  text-sm
-                  font-medium
-
-                  text-[#181512]
-                  "
-
-                >
-
-                  Solicită ofertă
-
-                </a>
+  href="#contact"
+  onClick={() => setOpen(false)}
+  className="btn-sheen mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-gold-gradient px-5 py-3.5 text-sm font-medium text-background"
+>
+  Solicită ofertă 
+  <ArrowUpRight className="h-4 w-4" />
+</a>
 
 
               </nav>
