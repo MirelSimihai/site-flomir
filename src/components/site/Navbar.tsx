@@ -6,6 +6,7 @@ import { Logo } from "./Logo";
 
 const NAV = [
   { label: "Servicii", href: "#servicii" },
+  { label: "Portofoliu", href: "#portfolio" },
   { label: "Despre", href: "#despre" },
   { label: "Proces", href: "#proces" },
   { label: "Contact", href: "#contact" },
@@ -19,7 +20,7 @@ export function Navbar() {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll); 
   }, []);
 
   return (
