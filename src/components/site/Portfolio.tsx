@@ -5,13 +5,11 @@ import { X } from "lucide-react";
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const images = [
-  // NUNȚI
   ...Array.from({ length: 12 }, (_, i) => ({
     src: `/images/portfolio/nunti/${i + 1}.webp`,
     category: "Nunti",
   })),
 
-  // SERVICII
   ...Array.from({ length: 12 }, (_, i) => ({
     src: `/images/portfolio/servicii/${i + 1}.webp`,
     category: "Servicii",
@@ -24,6 +22,7 @@ const filters = ["Toate", "Nunti", "Servicii"];
 export function Portfolio() {
   const [active, setActive] = useState("Toate");
   const [selected, setSelected] = useState<string | null>(null);
+  const [visible, setVisible] = useState(6);
 
 
   const filtered =
@@ -32,18 +31,19 @@ export function Portfolio() {
       : images.filter((img) => img.category === active);
 
 
-  return (
+  const visibleImages = filtered.slice(0, visible);
 
+
+  return (
     <section id="portfolio" className="relative py-28 lg:py-40">
 
 
-      {/* GOLD BACKLIGHT */}
+      {/* GOLD GLOW */}
       <div className="absolute left-1/2 top-20 -z-10 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-gold/10 blur-[140px]" />
 
 
 
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-
 
 
         {/* HEADER */}
@@ -61,18 +61,15 @@ export function Portfolio() {
           </div>
 
 
-
           <h2 className="mt-5 font-display text-4xl font-light leading-tight sm:text-5xl lg:text-6xl">
 
-            Evenimente reale,
-            {" "}
+            Evenimente reale,{" "}
 
             <span className="italic text-gold-gradient">
               emoții păstrate în timp
             </span>.
 
           </h2>
-
 
 
           <p className="mx-auto mt-6 max-w-xl text-muted-foreground">
@@ -88,28 +85,25 @@ export function Portfolio() {
 
 
 
-
-        {/* FILTER BUTTONS */}
+        {/* FILTERS */}
         <div className="mt-12 flex justify-center gap-3">
 
 
           {filters.map((f) => (
 
             <button
-
               key={f}
 
-              onClick={() => setActive(f)}
+              onClick={() => {
+                setActive(f);
+                setVisible(6);
+              }}
 
               className={`rounded-full border px-6 py-2 text-sm transition ${
                 active === f
-
                   ? "border-gold bg-gold text-black"
-
                   : "border-border text-muted-foreground hover:border-gold hover:text-gold"
-
               }`}
-
             >
 
               {f}
@@ -125,23 +119,16 @@ export function Portfolio() {
 
 
 
-
-
-        {/* PREMIUM MASONRY GRID */}
+        {/* GRID */}
         <motion.div
-
           layout
-
           className="mt-16 columns-1 gap-5 sm:columns-2 lg:columns-3"
-
         >
-
 
           <AnimatePresence>
 
 
-            {filtered.map((img, i) => (
-
+            {visibleImages.map((img, i) => (
 
               <motion.div
 
@@ -162,18 +149,13 @@ export function Portfolio() {
                 }}
 
                 className="group mb-5 break-inside-avoid overflow-hidden rounded-[2rem] border border-white/10 bg-card shadow-xl"
-
               >
 
 
                 <button
-
                   onClick={() => setSelected(img.src)}
-
                   className="relative block w-full overflow-hidden"
-
                 >
-
 
 
                   <img
@@ -190,20 +172,16 @@ export function Portfolio() {
 
 
 
-
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-70 transition duration-700 group-hover:opacity-20" />
 
 
-
                   <div className="pointer-events-none absolute inset-0 rounded-[2rem] border border-transparent transition duration-500 group-hover:border-gold/40" />
-
 
 
                 </button>
 
 
               </motion.div>
-
 
             ))}
 
@@ -216,9 +194,35 @@ export function Portfolio() {
 
 
 
+        {/* LOAD MORE */}
+        {visible < filtered.length && (
+
+          <div className="mt-12 flex justify-center">
+
+            <button
+
+              onClick={() =>
+                setVisible((prev) => prev + 6)
+              }
+
+              className="rounded-full border border-gold/30 px-8 py-4 text-sm text-gold transition hover:bg-gold hover:text-black"
+
+            >
+
+              Vezi mai multe momente
+
+            </button>
+
+          </div>
+
+        )}
 
 
-        {/* INSTAGRAM BUTTON */}
+
+
+
+
+        {/* INSTAGRAM */}
         <motion.div
 
           initial={{ opacity: 0, y: 20 }}
@@ -246,14 +250,12 @@ export function Portfolio() {
 
           >
 
-            Vezi mai multe momente pe Instagram →
+            Vezi mai multe pe Instagram →
 
           </a>
 
 
         </motion.div>
-
-
 
 
       </div>
@@ -267,9 +269,7 @@ export function Portfolio() {
       {/* LIGHTBOX */}
       <AnimatePresence>
 
-
         {selected && (
-
 
           <motion.div
 
@@ -284,7 +284,6 @@ export function Portfolio() {
           >
 
 
-
             <button
 
               onClick={() => setSelected(null)}
@@ -293,13 +292,9 @@ export function Portfolio() {
 
             >
 
-
               <X size={32} />
 
-
             </button>
-
-
 
 
 
@@ -320,18 +315,13 @@ export function Portfolio() {
             />
 
 
-
           </motion.div>
 
-
         )}
-
 
       </AnimatePresence>
 
 
-
     </section>
-
   );
 }
