@@ -175,11 +175,11 @@ export function Services() {
                   ease,
                 }}
                 whileHover={{ y: -6 }}
-                className={`group relative overflow-hidden rounded-3xl border border-border transition-all duration-500 ${
-                  s.featured
-                    ? "min-h-[330px] sm:col-span-2 lg:col-span-2"
-                    : "aspect-[4/5]"
-                }`}
+                className={`group relative overflow-hidden rounded-[2rem] border border-border transition-all duration-500 ${
+  s.featured
+    ? "min-h-[430px] sm:col-span-2 lg:col-span-2"
+    : "aspect-[4/5]"
+}`}
               >
 
                 {s.featured ? (
@@ -213,7 +213,7 @@ export function Services() {
                     <img
                       src={s.image}
                       alt={s.title}
-                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
                     />
 
                     <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-black/10" />
@@ -223,7 +223,7 @@ export function Services() {
 
                 <div className="relative z-10 flex h-full flex-col p-8 sm:p-10">
 
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-gold/30 bg-black/40 text-gold backdrop-blur">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/25 bg-black/30 text-gold/80 backdrop-blur-md">
                     <Icon
                       className="h-5 w-5"
                       strokeWidth={1.5}
@@ -236,7 +236,7 @@ export function Services() {
                       className={`font-display font-light tracking-[-0.02em] ${
                         s.featured
                           ? "text-4xl lg:text-5xl"
-                          : "text-3xl"
+: "text-[2rem]"
                       }`}
                     >
                       {s.title}
