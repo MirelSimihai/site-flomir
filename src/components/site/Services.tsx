@@ -28,21 +28,21 @@ const services: Service[] = [
     icon: Camera,
     title: "Foto & Video",
     desc:
-      "Serviciul nostru principal. Imagini cinematice, fotografii editate cu rafinament și cadre aeriene 4K cu drona — totul inclus.",
+      "Păstrăm emoțiile zilei tale prin fotografii naturale și filmări atent realizate, pentru amintiri la care vei reveni cu drag.",
     featured: true,
   },
   {
     icon: Sparkles,
     title: "Oglindă Foto",
     desc:
-      "Print instant, interactiv, cu semnătură pe ecran și ramă personalizată.",
+      "Distracție pentru invitați și amintiri printate pe loc.",
     image: "/images/services/oglinda-foto.webp",
   },
   {
     icon: Aperture,
     title: "Cabină Foto",
     desc:
-      "Recuzită premium, printuri rapide și amintiri pentru fiecare invitat.",
+      "Un colț plin de zâmbete unde invitații creează fotografii spontane și pleacă acasă cu o amintire.",
     image: "/images/services/cabina-foto.webp",
   },
   {
@@ -56,42 +56,42 @@ const services: Service[] = [
     icon: Wine,
     title: "Bar Mobil + Alcohol Test",
     desc:
-      "Bar elegant, bartenderi profesioniști și alcohol test pentru siguranța invitaților.",
+      "Cocktailuri pregătite pe loc, atmosferă elegantă și o experiență completă pentru invitații tăi.",
     image: "/images/services/bar-mobil.webp",
   },
   {
     icon: CloudFog,
     title: "Fum Greu",
     desc:
-      "Efect de dans pe nori — primul dans devine cinematic, fără rival.",
+      "Creează un moment de poveste la primul dans.",
     image: "/images/services/fum-greu.webp",
   },
   {
     icon: Cloud,
     title: "Baloane de Fum",
     desc:
-      "Momente foto colorate, ideale pentru sesiuni de couple shots.",
+      "Adaugă culoare și emoție fotografiilor tale cu efecte baloanele noastre de fum.",
     image: "/images/services/baloane-fum.webp",
   },
   {
     icon: Drum,
     title: "Tarabană Show",
     desc:
-      "Intrare spectaculoasă cu percuție live, energie și ritm controlat.",
+      "Energie, ritm și atmosferă live pentru momentele în care vrei ca invitații să simtă petrecerea.",
     image: "/images/services/tarabana.webp",
   },
   {
     icon: GlassWater,
     title: "Tort de Shoturi",
     desc:
-      "O alternativă elegantă și surprinzătoare pentru momentul tortului.",
+      "Un moment surpriză pentru invitați, cu efect vizual spectaculos și distracție garantată.",
     image: "/images/services/tort-shoturi.webp",
   },
   {
     icon: Flower2,
     title: "Aranjamente Florale",
     desc:
-      "Compoziții florale dedicate, gândite în armonie cu locația și tema serii.",
+      "Transformăm spațiile simple în decoruri elegante, create cu atenție la fiecare detaliu al evenimentului tău.",
     image: "/images/services/florale.webp",
   },
 ];
