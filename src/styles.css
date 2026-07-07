@@ -467,3 +467,40 @@
 
 
 }
+
+/* =========================
+   MOBILE OVERFLOW FIX
+========================= */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+/* toate sectiunile blocate pe viewport */
+section {
+  max-width: 100vw;
+  overflow-x: clip;
+}
+
+
+/* imagini / video responsive */
+img,
+video {
+  max-width: 100%;
+}
+
+
+/* elementele absolute mari (glow-uri) */
+.absolute {
+  max-width: 100vw;
+}
