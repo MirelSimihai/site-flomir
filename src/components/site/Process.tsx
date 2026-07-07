@@ -1,128 +1,345 @@
 import { motion } from "framer-motion";
+import {
+  MessageCircle,
+  Sparkles,
+  ClipboardCheck,
+  Heart,
+} from "lucide-react";
 
 const ease = [0.22, 1, 0.36, 1] as const;
+
 
 const steps = [
   {
     n: "01",
+    icon: MessageCircle,
     title: "Ne cunoaștem",
     desc:
-      "Discutăm despre evenimentul tău, locație, numărul de invitați și serviciile de care ai nevoie.",
+      "Discutăm despre evenimentul tău, locație, numărul de invitați și serviciile pe care ți le dorești.",
   },
   {
     n: "02",
+    icon: Sparkles,
     title: "Creăm pachetul ideal",
     desc:
-      "Alegem împreună combinația potrivită de servicii Flomir pentru stilul și bugetul tău.",
+      "Alegem împreună combinația perfectă de servicii Flomir potrivită stilului evenimentului tău.",
   },
   {
     n: "03",
-    title: "Pregătim fiecare detaliu",
+    icon: ClipboardCheck,
+    title: "Pregătim detaliile",
     desc:
-      "Stabilim programul, organizarea și toate momentele speciale înainte de eveniment.",
+      "Organizăm programul, serviciile alese și fiecare moment important înainte de eveniment.",
   },
   {
     n: "04",
-    title: "Trăiești momentul",
+    icon: Heart,
+    title: "Te bucuri de moment",
     desc:
-      "Echipa Flomir se ocupă de implementare, iar tu te bucuri de fiecare clipă.",
+      "În ziua evenimentului echipa Flomir se ocupă de tot, iar tu trăiești fiecare clipă.",
   },
 ];
 
+
+
+
 export function Process() {
+
   return (
-    <section id="proces" className="relative py-28 lg:py-40">
+
+    <section
+      id="proces"
+      className="relative overflow-hidden py-28 lg:py-40"
+    >
+
+
+
+      {/* glow */}
+      <div
+        aria-hidden
+        className="
+        absolute
+        left-1/2
+        top-1/2
+        -z-10
+        h-[600px]
+        w-[600px]
+        -translate-x-1/2
+        -translate-y-1/2
+        rounded-full
+        bg-gold/15
+        blur-[150px]
+        "
+      />
+
+
 
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
 
+
+        {/* TITLE */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease }}
+
+          initial={{ opacity:0, y:20 }}
+
+          whileInView={{ opacity:1, y:0 }}
+
+          viewport={{ once:true }}
+
+          transition={{ duration:.8, ease }}
+
           className="mx-auto max-w-3xl text-center"
+
         >
 
-          <div className="text-[11px] uppercase tracking-[0.4em] text-gold">
+
+          <div
+            className="
+            text-[11px]
+            uppercase
+            tracking-[0.4em]
+            text-gold
+            "
+          >
+
             Cum lucrăm
+
           </div>
 
 
-          <h2 className="mt-5 font-display text-4xl font-light leading-tight tracking-[-0.025em] sm:text-5xl lg:text-6xl">
+
+
+          <h2
+            className="
+            mt-5
+            font-display
+            text-4xl
+            font-light
+            leading-tight
+            tracking-[-0.03em]
+            sm:text-5xl
+            lg:text-6xl
+            "
+          >
 
             Simplu, organizat,
+
             {" "}
+
             <span className="italic text-gold-gradient">
-              fără stres
-            </span>.
+
+              fără stres.
+
+            </span>
+
 
           </h2>
 
 
-          <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
 
-            De la prima discuție până la ultimul moment al evenimentului,
-            ai o echipă care se ocupă de experiența completă.
+
+          <p
+            className="
+            mx-auto
+            mt-6
+            max-w-xl
+            text-base
+            leading-relaxed
+            text-muted-foreground
+            "
+          >
+
+            De la prima discuție până la ziua evenimentului,
+            ai lângă tine o echipă care pregătește fiecare detaliu.
 
           </p>
+
 
         </motion.div>
 
 
 
-        <ol className="mt-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-
-          {steps.map((s, i) => (
-
-            <motion.li
-              key={s.n}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.7,
-                delay: i * 0.08,
-                ease,
-              }}
-              whileHover={{ y: -6 }}
-              className="group relative overflow-hidden rounded-[2rem] border border-border bg-card/60 p-9 transition-all duration-500 hover:border-gold/30"
-            >
 
 
-              <div className="absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
-                style={{
-                  background:
-                    "radial-gradient(circle at top, rgba(212,175,55,0.14), transparent 60%)",
+
+        {/* CARDS */}
+
+        <div
+          className="
+          mt-20
+          grid
+          gap-7
+          sm:grid-cols-2
+          lg:grid-cols-4
+          "
+        >
+
+
+          {steps.map((s,i)=>{
+
+            const Icon = s.icon;
+
+
+            return (
+
+
+              <motion.div
+
+                key={s.n}
+
+                initial={{opacity:0,y:30}}
+
+                whileInView={{opacity:1,y:0}}
+
+                viewport={{once:true}}
+
+                transition={{
+                  duration:.7,
+                  delay:i*.08,
+                  ease,
                 }}
-              />
+
+                whileHover={{y:-8}}
 
 
-              <div className="relative font-display text-6xl font-light text-gold-gradient">
-                {s.n}
-              </div>
+                className="
+                group
+
+                rounded-[2rem]
+
+                border
+                border-gold/20
+
+                bg-[#F8F4EC]
+
+                p-8
+
+                shadow-[0_20px_50px_rgba(24,21,18,.08)]
+
+                transition-all
+                duration-500
+
+                hover:border-gold/50
+                hover:shadow-[0_25px_70px_rgba(198,164,93,.25)]
+                "
+
+              >
 
 
-              <div className="relative mt-6 h-px w-12 bg-gold/40" />
+
+                {/* ICON */}
+
+                <div
+                  className="
+                  flex
+                  h-16
+                  w-16
+
+                  items-center
+                  justify-center
+
+                  rounded-full
+
+                  bg-[#EFE4D2]
+
+                  text-[#9A7832]
+
+                  shadow-[0_15px_35px_rgba(198,164,93,.2)]
+
+                  transition
+                  duration-500
+
+                  group-hover:scale-110
+                  group-hover:bg-gold
+                  group-hover:text-[#181512]
+                  "
+                >
+
+                  <Icon size={25} strokeWidth={1.6}/>
+
+                </div>
 
 
-              <h3 className="relative mt-8 font-display text-2xl font-light">
-                {s.title}
-              </h3>
 
 
-              <p className="relative mt-4 text-sm leading-relaxed text-muted-foreground">
-                {s.desc}
-              </p>
+
+                <div
+                  className="
+                  mt-8
+
+                  text-[11px]
+
+                  uppercase
+
+                  tracking-[0.35em]
+
+                  text-gold
+                  "
+                >
+
+                  Pasul {s.n}
+
+                </div>
 
 
-            </motion.li>
 
-          ))}
 
-        </ol>
+                <h3
+                  className="
+                  mt-4
+
+                  font-display
+
+                  text-3xl
+
+                  leading-tight
+
+                  text-[#181512]
+                  "
+                >
+
+                  {s.title}
+
+                </h3>
+
+
+
+
+
+                <p
+                  className="
+                  mt-5
+
+                  text-sm
+
+                  leading-relaxed
+
+                  text-[#7C6F61]
+                  "
+                >
+
+                  {s.desc}
+
+                </p>
+
+
+
+              </motion.div>
+
+
+            );
+
+          })}
+
+
+        </div>
+
 
       </div>
 
+
     </section>
+
   );
+
 }
