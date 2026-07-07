@@ -174,7 +174,7 @@ export function Hero() {
 
           {[
             ["200+", "Evenimente realizate"],
-            ["2018", "Din 2022"],
+            ["2022", "Din 2022"],
             ["4.9★", "Rating Google"],
             ["10+", "Servicii premium"],
           ].map(([k,v]) => (
