@@ -213,7 +213,7 @@ export function Hero() {
           >
 
             Foto & Video, Cabină Foto, Platformă 360, Oglindă Foto,
-            Bar Mobil, Fum Greu, Dronă și multe alte servicii premium
+            Bar Mobil, Fum Greu, Baloane de fum și multe alte servicii premium
             pentru nunți și botezuri.
 
 
