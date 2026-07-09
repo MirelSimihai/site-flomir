@@ -120,7 +120,7 @@ export function About() {
               {[
                 "O singură echipă pentru toate serviciile",
                 "Organizare mai simplă și comunicare rapidă",
-                "Experiență reală în peste 200 de evenimente",
+                "Experiență reală în peste 300 de evenimente",
               ].map((item) => (
 
                 <div
@@ -209,7 +209,7 @@ export function About() {
 
                 <InfoCard
                   icon={Users}
-                  number="200+"
+                  number="300+"
                   text="evenimente realizate alături de clienții noștri"
                 />
 

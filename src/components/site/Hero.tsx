@@ -131,7 +131,7 @@ export function Hero() {
 
             <span className="h-1.5 w-1.5 rounded-full bg-gold"/>
 
-            Din 2018 • Peste 700 de evenimente realizate
+            Din 2022 • Peste 300 de evenimente realizate
 
 
           </motion.div>
@@ -493,8 +493,8 @@ export function Hero() {
 
 
           {[
-            ["700+","Evenimente realizate"],
-            ["2018","Din 2018"],
+            ["300+","Evenimente realizate"],
+            ["2022","Din 2022"],
             ["4.9★","Rating Google"],
             ["10+","Servicii premium"],
           ].map(([k,v])=>(
